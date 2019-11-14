@@ -1,3 +1,25 @@
+Skip to content
+Why GitHub? 
+Enterprise
+Explore 
+Marketplace
+Pricing 
+Search
+
+Sign in
+Sign up
+00105desharma/storage-blob-upload-from-webapp
+forked from Azure-Samples/storage-blob-upload-from-webapp
+ Code Pull requests 0 Projects 0 Security Insights
+Join GitHub today
+GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.
+
+storage-blob-upload-from-webapp/ImageResizeWebApp/ImageResizeWebApp/Views/Home/Index.cshtml
+@desharma desharma Update Index.cshtml
+92b8251 21 days ago
+@richardjortega@desharma@sowsan@georgewallace
+174 lines (150 sloc)  5.94 KB
+  
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -10,21 +32,17 @@
     html {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
-
     main {
         margin: 20px;
     }
-
     #gallery-note {
         font-size: smaller
     }
-
     .blueimp-gallery {
         margin: 25px;
         max-width: 150px;
         padding-bottom: 150px;
     }
-
     .dropzone {
         border: 3px dashed #00a1f1;
         background: #F0F8FF;
@@ -32,11 +50,9 @@
         border-radius: 5px;
         max-width: 400px;
     }
-
     .dropzone .dz-message {
         font-weight: 350;
     }
-
     .dropzone .dz-message .note {
         font-family: sans-serif;
         font-size: 18px;
@@ -87,7 +103,10 @@
     <div class="box footer">
         <hr>
         <div class="privacy">
-            <p> This application is meant for uploading METRS data to Azure storage.</p>
+            <p> Step 1: Upload the file to <a href="https://portal.azure.com/#blade/Microsoft_Azure_Storage/ContainerMenuBlade/overview/storageAccountId/%2Fsubscriptions%2F8543018b-77b1-4c6c-9aa1-e68387d88cf4%2FresourceGroups%2FComplianceAnalytics%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fcompliancepoctest1/path/compliance-analytics-demo/etag/%220x8D768619F9E8FB7%22">Azure Storage</a></a>.</p>
+            <p> Step 2: Run job to start pipeline built with <a href="https://adf.azure.com/authoring/pipeline/pipeline1?factory=%2Fsubscriptions%2F8543018b-77b1-4c6c-9aa1-e68387d88cf4%2Fresourcegroups%2FComplianceAnalytics%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2FComplianceAnalyticsDemoFactory">Azure Data Factory</a></p>
+            <p> Step 3: Perform analysis of file on Databricks </p>
+            <p> Step 4: Visualize insights and outcomes using PowerBI</p>
         </div>
     </div>
 </main>
@@ -100,13 +119,11 @@
 <script>
     // init gallery for later use
     var gallery;
-
     // Grab links for images from backend api
     function fetchImageLinks() {
         // Fetch images
         $.get("api/Images/thumbnails", function(fetchedImageLinks) {
             console.log(fetchedImageLinks)
-
             // Check if anything is in there
             if ( _.isEmpty(fetchedImageLinks) ){
                 console.log('empty fetched')
@@ -132,15 +149,12 @@
                         // do nothing
                     } else {
                         console.log('images arr are not equal')
-
                         // update gallery with new image urls. Only compare actual url without SAS token query string
                         var newImageLinks = _.difference(fetchedImageLinks.map(s => s.split("?")[0]), gallery.list.map(s => s.split("?")[0]))
-
                         console.log('differene is: ')
                         console.log(newImageLinks)
                         // Only add new images
                         gallery.add(newImageLinks);
-
                         // Force image load
                         gallery.next();
                     }
@@ -148,14 +162,12 @@
             }     
         });
     }
-
     // Start first interval
     fetchImageLinks()
     
     setInterval(function() {
         fetchImageLinks()
     }, 5000) 
-
     /* Dropzone */
     // "imageUpload" is the camelized version of the HTML element's ID
     Dropzone.options.imageUpload = {
