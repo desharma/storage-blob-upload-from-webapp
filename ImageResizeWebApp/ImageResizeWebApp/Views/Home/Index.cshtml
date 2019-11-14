@@ -1,3 +1,4 @@
+
 <!-- Client side libs required  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.25.2/css/blueimp-gallery.min.css" crossorigin="anonymous">
@@ -59,7 +60,7 @@
                 </div>
             </form>
         </div>
-        <h2>Application Notes</h2>
+        <h2>Pipeline</h2>
             <!-- <p><span id="gallery-note">Gallery refreshes from storage container image links every 5 seconds.</span></p> -->
             <div id="stored-images"></div>
 
@@ -79,10 +80,14 @@
         <div class="privacy">
             <p> Step 1: Upload the file to <a href="https://portal.azure.com/#blade/Microsoft_Azure_Storage/ContainerMenuBlade/overview/storageAccountId/%2Fsubscriptions%2F8543018b-77b1-4c6c-9aa1-e68387d88cf4%2FresourceGroups%2FComplianceAnalytics%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fcompliancepoctest1/path/compliance-analytics-demo/etag/%220x8D768619F9E8FB7%22">Azure Storage</a></a>.</p>
             <p> Step 2: Run job to start pipeline built with <a href="https://adf.azure.com/authoring/pipeline/pipeline1?factory=%2Fsubscriptions%2F8543018b-77b1-4c6c-9aa1-e68387d88cf4%2Fresourcegroups%2FComplianceAnalytics%2Fproviders%2FMicrosoft.DataFactory%2Ffactories%2FComplianceAnalyticsDemoFactory">Azure Data Factory</a></p>
-            <p> Step 3: Perform analysis of file on Databricks </p>
-            <p> Step 4: Visualize insights and outcomes using PowerBI</p>
+            <p> Step 3: Perform analysis of file on <a href="https://westus.azuredatabricks.net/?o=7552961975465013#notebook/974205367694143/command/1010775394161672">Databricks</a></p>
         </div>
     </div>
+    <h2>Results</h2>
+    <div class="privacy">
+        <p> Step 4: Visualize insights and outcomes using <a href="https://app.powerbi.com/groups/me/reports/db4b93f7-8671-4607-b581-736765d0d820/ReportSection">PowerBI</a></p>
+    </div>
+
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
